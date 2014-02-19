@@ -4,13 +4,12 @@ MAINTAINER Chris Weyl <chris.weyl@wps.io>
 # update packages
 ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get -y install python-software-properties
-RUN apt-add-repository ppa:git-core/ppa
+RUN echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu precise main" >> /etc/apt/sources.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E1DD270288B4E6030699E45FA1715D88E1DF1F24
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install git openssh-server
-RUN mkdir /var/run/sshd
+RUN mkdir -p /var/run/sshd
 
 # fetch the gitolite source (latest upstream by default)...
 RUN mkdir -p /usr/local/src
