@@ -6,9 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu precise main" >> /etc/apt/sources.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E1DD270288B4E6030699E45FA1715D88E1DF1F24
-RUN apt-get update
-RUN apt-get -y upgrade
-RUN apt-get -y install git openssh-server
+RUN apt-get update && apt-get -y upgrade && apt-get -y install git openssh-server
 RUN mkdir -p /var/run/sshd
 
 # fetch the gitolite source (latest upstream by default)...
