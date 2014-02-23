@@ -1,79 +1,53 @@
 # Package generated configuration file
 # See the sshd_config(5) manpage for details
 
-# What ports, IPs and protocols we listen for
-Port 22
+# this is intended to be *very* restrictive.
+
 # Use these options to restrict which interfaces/protocols sshd will bind to
+Port 22
 #ListenAddress ::
 #ListenAddress 0.0.0.0
+
 Protocol 2
-# HostKeys for protocol version 2
 HostKey /srv/ssh/ssh_host_rsa_key
 HostKey /srv/ssh/ssh_host_dsa_key
 HostKey /srv/ssh/ssh_host_ecdsa_key
-#Privilege Separation is turned on for security
-UsePrivilegeSeparation yes
 
-# Lifetime and size of ephemeral version 1 server key
-KeyRegenerationInterval 3600
-ServerKeyBits 768
+# only allow the 'git' user to log in
+AllowUsers git
 
-# Logging
+# Logging -- NOTE: gitolite-run executes us with -e, so logs go to stderr
 SyslogFacility AUTH
 LogLevel INFO
-
-# Authentication:
-LoginGraceTime 120
-PermitRootLogin yes
-StrictModes yes
-
-RSAAuthentication yes
-PubkeyAuthentication yes
-#AuthorizedKeysFile	%h/.ssh/authorized_keys
-
-# Don't read the user's ~/.rhosts and ~/.shosts files
-IgnoreRhosts yes
-# For this to work you will also need host keys in /etc/ssh_known_hosts
-RhostsRSAAuthentication no
-# similar for protocol version 2
-HostbasedAuthentication no
-# Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
-#IgnoreUserKnownHosts yes
-
-# To enable empty passwords, change to yes (NOT RECOMMENDED)
-PermitEmptyPasswords no
-
-# Change to yes to enable challenge-response passwords (beware issues with
-# some PAM modules and threads)
-ChallengeResponseAuthentication no
-
-# Change to no to disable tunnelled clear text passwords
-#PasswordAuthentication yes
-
-# Kerberos options
-#KerberosAuthentication no
-#KerberosGetAFSToken no
-#KerberosOrLocalPasswd yes
-#KerberosTicketCleanup yes
-
-# GSSAPI options
-#GSSAPIAuthentication no
-#GSSAPICleanupCredentials yes
-
-X11Forwarding yes
-X11DisplayOffset 10
-PrintMotd no
-PrintLastLog yes
-TCPKeepAlive yes
-#UseLogin no
-
-#MaxStartups 10:30:60
-#Banner /etc/issue.net
 
 # Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
 
-Subsystem sftp /usr/lib/openssh/sftp-server
+AllowAgentForwarding no
+AllowTcpForwarding no
+AuthorizedKeysFile	%h/.ssh/authorized_keys
+ChallengeResponseAuthentication no
+GSSAPIAuthentication no
+GatewayPorts no
+HostbasedAuthentication no
+IgnoreRhosts yes
+IgnoreUserKnownHosts yes
+KerberosAuthentication no
+LoginGraceTime 20
+PasswordAuthentication no
+PermitEmptyPasswords no
+PermitOpen no
+PermitRootLogin no
+PermitTunnel no
+PrintLastLog yes
+PrintMotd no
+PubkeyAuthentication yes
+RhostsRSAAuthentication no
+StrictModes yes
+TCPKeepAlive yes
+UseLogin no
+UsePrivilegeSeparation yes
+X11Forwarding no
 
 # Set this to 'yes' to enable PAM authentication, account processing,
 # and session processing. If this is enabled, PAM authentication will
@@ -84,4 +58,4 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-UsePAM yes
+UsePAM no
