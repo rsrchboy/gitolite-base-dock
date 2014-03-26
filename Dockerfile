@@ -11,6 +11,7 @@ MAINTAINER Chris Weyl <chris.weyl@wps.io>
 ENV DEBIAN_FRONTEND noninteractive
 RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E1DD270288B4E6030699E45FA1715D88E1DF1F24
+RUN echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu precise main" >> /etc/apt/sources.list
 RUN apt-get update && apt-get -y install git openssh-server
 RUN mkdir -p /var/run/sshd
 
