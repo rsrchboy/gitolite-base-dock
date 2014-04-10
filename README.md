@@ -31,3 +31,10 @@ This will become the administrator's key.
 
 Enjoy.  Ideas / bugs / suggestions?  Feel free to submit issues or pull
 requests via github :)
+
+# Changes
+
+## Wed Apr  9 22:10:59 PDT 2014
+
+Rebuild to ensure we're using the latest openssl packages (re: CVE-2014-0160),
+if any.
