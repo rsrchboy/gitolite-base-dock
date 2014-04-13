@@ -28,10 +28,20 @@ public key pre-populated.
 
 This will become the administrator's key.
 
-# Profit!
+## Profit!
 
 Enjoy.  Ideas / bugs / suggestions?  Feel free to submit issues or pull
 requests via github :)
+
+If you really like this, feel free to [flattr][1] it.  Please note that this
+is not *expected* if you use this work; I largely create and release these
+images because I need them or I find it enjoyable.  However, don't let that
+stop you giving me money if you feel like it :)
+
+[![Flattr this!][2]][1]
+
+[1]: https://flattr.com/submit/auto?user_id=RsrchBoy&url=https://github.com/RsrchBoy/gitolite-base-dock&title=Docker.io%20gitolite-base%20image&tags=docker
+[2]: https://api.flattr.com/button/flattr-badge-large.png "Flattr this!"
 
 # Author and License
 
