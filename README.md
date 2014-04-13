@@ -11,7 +11,9 @@ in another container/Dockerfile.
 Using it directly involves replacing admin.pub and rebuilding it.  I don't
 think this is the most awesome of ideas, so this is the last I'll mention it.
 
-## First, create a ```Dockerfile``` for your own image, extending this one:
+## First, create a ```Dockerfile```
+
+...for your own image, extending this one.
 
 Something like:
 
@@ -24,9 +26,10 @@ Note you can make whatever other changes you desire at this point, but at a
 minimum this is all you need to do to create a custom image with your ssh
 public key pre-populated.
 
-## Replace admin.pub with an ssh public key of your choice
+## Add your ssh public key
 
-This will become the administrator's key.
+Replace admin.pub with an ssh public key of your choice;
+this will become the administrator's key.
 
 ## Profit!
 
