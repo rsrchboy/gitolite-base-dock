@@ -21,7 +21,8 @@ MAINTAINER Hi There <me@foo.org>
 ```
 
 Note you can make whatever other changes you desire at this point, but at a
-minimum all you need
+minimum this is all you need to do to create a custom image with your ssh
+public key pre-populated.
 
 ## Replace admin.pub with an ssh public key of your choice
 
