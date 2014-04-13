@@ -56,7 +56,11 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 # Changes
 
-## Wed Apr  9 22:10:59 PDT 2014
+### Sun Apr 13 15:02:25 PDT 2014
+
+*No image changes.* Add a formal license declaration; add a flattr link; minor doc fixups.
+
+### Wed Apr  9 22:10:59 PDT 2014
 
 Rebuild to ensure we're using the latest openssl packages (re: CVE-2014-0160),
 if any.
