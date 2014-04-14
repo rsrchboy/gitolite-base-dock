@@ -36,23 +36,31 @@ this will become the administrator's key.
 Enjoy.  Ideas / bugs / suggestions?  Feel free to submit issues or pull
 requests via github :)
 
-If you really like this, feel free to [flattr][1] it.  Please note that this
-is not *expected* if you use this work; I largely create and release these
-images because I need them or I find it enjoyable.  However, don't let that
-stop you giving me money if you feel like it :)
-
-[![Flattr this!][2]][1]
-
-[1]: https://flattr.com/submit/auto?user_id=RsrchBoy&url=https://github.com/RsrchBoy/gitolite-base-dock&title=Docker.io%20gitolite-base%20image&tags=docker
-[2]: https://api.flattr.com/button/flattr-badge-large.png "Flattr this!"
-
 # Author and License
 
-Copyright (c) 2014 by Chris Weyl <chris.weyl@wps.io>.
+Copyright (c) 2014 by Chris Weyl \<chris.weyl@wps.io\>.
 
+<table><tr><td>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-
+</td><td>
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</td></tr>
+<tr><td>
+<a href="https://flattr.com/submit/auto?user_id=RsrchBoy&url=https://github.com/RsrchBoy/gitolite-base-dock&title=Docker.io%20gitolite-base%20image&tags=docker">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this if -- and only if -- you want :)" />
+</a>
+</td>
+<td>
+Please note that
+<strong>this is not expected</strong>
+but rather a very pleasant surprise: I largely create and release
+these images because I need them or I find it enjoyable. However,
+don't let that stop you giving me money if you feel like it ;)
+</td></tr></table>
+
+[1]: https://flattr.com/submit/auto?user_id=RsrchBoy&url=https://github.com/RsrchBoy/gitolite-base-dock&title=Docker.io%20gitolite-base%20image&tags=docker
+[2]: http://api.flattr.com/button/flattr-badge-large.png "Flattr this if -- and only if -- you want :)"
+[3]: http://i.creativecommons.org/l/by-sa/4.0/80x15.png
 
 # Changes
 
