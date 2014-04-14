@@ -1,4 +1,10 @@
-# Package generated configuration file
+# This work is Copyright (c) 2014 by Chris Weyl <chris.weyl@wps.io>
+#
+# This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+# International License (CC-BY-SA-4.0).
+#
+# http://creativecommons.org/licenses/by-sa/4.0/
+
 # See the sshd_config(5) manpage for details
 
 # this is intended to be *very* restrictive.
