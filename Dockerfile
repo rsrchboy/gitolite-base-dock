@@ -51,3 +51,4 @@ ENTRYPOINT ["/usr/local/sbin/gitolite-run"]
 # handled in gitolite-run, however.
 
 ONBUILD ADD admin.pub /usr/local/src/admin.pub
+ONBUILD RUN chown root.root /usr/local/src/admin.pub && chmod 0644 /usr/local/src/admin.pub
