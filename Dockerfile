@@ -5,21 +5,25 @@
 #
 # http://creativecommons.org/licenses/by-sa/4.0/
 
-FROM ubuntu:precise
+FROM ubuntu:trusty
 MAINTAINER Chris Weyl <chris.weyl@wps.io>
 
 # update packages
 ENV DEBIAN_FRONTEND noninteractive
 RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E1DD270288B4E6030699E45FA1715D88E1DF1F24
-RUN echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu precise main" >> /etc/apt/sources.list
-RUN apt-get update && apt-get -y install git openssh-server
-RUN mkdir -p /var/run/sshd
+RUN echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu trusty main" >> /etc/apt/sources.list
+RUN \
+    apt-get update && \
+    DEBIAN_FRONTEND=noninteractive \
+        apt-get -y install git openssh-server && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir -p /var/run/sshd
 
 # fetch the gitolite source (latest upstream by default)...
 RUN umask 0022
-RUN mkdir -p /usr/local/src
-RUN git clone git://github.com/sitaramc/gitolite /usr/local/src/gitolite
+RUN mkdir -p /usr/local/src && git clone git://github.com/sitaramc/gitolite /usr/local/src/gitolite
 
 # install gitolite...
 RUN /usr/local/src/gitolite/install -to /usr/local/bin
@@ -43,9 +47,9 @@ ENTRYPOINT ["/usr/local/sbin/gitolite-run"]
 
 # --------------
 #
-# These will be run as part of the initial build of any *children* containers.
-# This should allow us to be able to easily create containers with specific
-# ssh keypairs.
+# These will be run as part of the initial build of any *child* images.  This
+# should allow us to be able to easily create images with specific ssh
+# keypairs.
 
 # builds FROM this one will do the full install to the /srv volume -- this is
 # handled in gitolite-run, however.
