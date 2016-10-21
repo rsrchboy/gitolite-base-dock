@@ -27,7 +27,7 @@ if [ ! -f /srv/ssh/.ssh-keys-setup ] ; then
         ssh-keygen -B -f $b
     done
     echo "# ...done."
-    touch /srv/.ssh-keys-setup
+    touch /srv/ssh/.ssh-keys-setup
 fi
 
 # if this is our first time or we're not using a preexisting volume for /srv,
